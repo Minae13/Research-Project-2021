@@ -1,0 +1,129 @@
+WindowManager:
+    MainWindow:
+    EncodeWindow:
+    DecodeWindow:
+
+<MainWindow>:
+    name: "main"
+
+    GridLayout:
+        cols:2
+        size: root.width, root.height
+        padding: 50
+        spacing: 20
+     
+        Image:
+            source: "LogoTransp.png"
+            allow_stretch: False
+            keep_ratio: True
+        Label:
+            text: "Please, select a mode."
+            font_size:30
+            font_name: 'Framd'
+            color: "#458028"
+        Button:
+            text: "ENCODE"
+            size_hint: (1,0.5)
+            font_name: 'Framd'
+            bold:True
+            background_color: "#458028"
+            on_release: app.root.current = "encode"
+        Button:
+            text: "DECODE"
+            size_hint: (1,0.5)
+            font_name: 'Framd'
+            bold:True
+            background_color: "#458028"
+            on_release: app.root.current = "decode"
+
+<EncodeWindow>:
+    name: "encode"
+
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+        padding: 50
+        spacing: 20
+
+        GridLayout:
+            cols:2
+            Image:
+                source: "LogoTransp.png"
+                allow_stretch: False
+                keep_ratio: True     
+            Label:
+                id: elabel
+                text: "Please enter the message to be encoded:"
+                font_size:21
+                font_name: 'Framd'
+                color: "#458028"
+        TextInput:
+            id: emessage
+            multiline: False
+            font_size: 19
+            font_name: 'Framd'
+            padding: 35
+            size_hint: (1,0.5)
+        GridLayout:
+            cols:2
+            spacing:20
+            Button:
+                text: "ENCODE"
+                size_hint: (1,0.5)
+                font_name: 'Framd'
+                bold:True
+                background_color: "#458028"
+                on_press: root.encodeMessage()
+            Button:
+                text: "RETURN"
+                size_hint: (1,0.5)
+                font_name: 'Framd'
+                bold:True
+                background_color: "#458028"
+                on_release: app.root.current = "main"
+           
+<DecodeWindow>:
+    name: "decode"
+    
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+        padding: 50
+        spacing: 20
+
+        GridLayout:
+            cols:2
+            Image:
+                source: "LogoTransp.png"
+                allow_stretch: False
+                keep_ratio: True
+            Label:
+                id: dlabel
+                text: "Please enter the message to be decoded:"
+                font_size:21
+                font_name: 'Framd'
+                color: "#458028"
+        TextInput:
+            id: dmessage
+            multiline: False
+            font_size: 19
+            font_name: 'Framd'
+            padding: 35
+            size_hint: (1,0.5)   
+        GridLayout:
+            cols:2
+            spacing: 20
+            Button:
+                text: "DECODE"
+                size_hint: (1,0.5)
+                font_name: 'Framd'
+                bold:True
+                background_color: "#458028"
+                on_press: root.decodeMessage()
+            Button:
+                text: "RETURN"
+                size_hint: (1,0.5)
+                font_name: 'Framd'
+                bold:True
+                background_color: "#458028"
+                on_release: app.root.current = "main"

@@ -1,0 +1,25 @@
+<MyGridLayout>
+    GridLayout:
+        cols:1
+        size: root.width, root.height
+
+        GridLayout:
+            cols:2
+
+            Label:
+                text: "Name"
+            TextInput:
+                multiline:False
+
+            Label:
+                text: "Favorite Pizza"
+            TextInput:
+                multiline:False
+
+            Label:
+                text: "Favorite Color"
+            TextInput:
+                multiline:False
+        
+        Button:
+            text: "Submit"
